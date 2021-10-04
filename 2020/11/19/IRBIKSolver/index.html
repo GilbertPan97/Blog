@@ -259,7 +259,8 @@ z_{i}
 </ol>
 <p>公式(7)中，<span class="math inline">\(^{i}p^{0}_{n}\)</span> 表示末端执行器坐标原点想对于坐标系 {<span class="math inline">\(i\)</span>} 的位置矢量在基坐标系{<span class="math inline">\(0\)</span>}中的表示，即： <span class="math display">\[
 ^{i}p^{0}_{n}={^{0}_{i}R{^{i}p_{n}}} \tag{8}
-\]</span> 有时，要求沿着工具坐标系的某轴进行控制，因此需要将线速度和角速度在工具坐标系{<span class="math inline">\(T\)</span>}中进行表示。为此，需要在 <span class="math inline">\(v\)</span> 和 <span class="math inline">\(w\)</span> 前乘以 <span class="math inline">\(3\times3\)</span> 的旋转矩阵 <span class="math inline">\(^{0}_{n}R^{T}\)</span>，即： <span class="math display">\[
+\]</span> 有时，要求沿着工具坐标系的某轴进行控制，因此需要将线速度和角速度在工具坐标系{<span class="math inline">\(T\)</span>}中进行表示。为此，需要在 <span class="math inline">\(v\)</span> 和 <span class="math inline">\(w\)</span> 前乘以 <span class="math inline">\(3\times3\)</span> 的旋转矩阵 <span class="math inline">\(^{0}_{n}R^{T}\)</span>，即：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\begin{bmatrix}^{n}v\\&space;^{n}w\end{bmatrix}=\begin{bmatrix}^{0}_{n}\mathbf{R}&space;&&space;0\\&space;0&space;&&space;^{0}_{n}\mathbf{R}^{T}\end{bmatrix}\begin{bmatrix}v\\&space;w\end{bmatrix}=\begin{bmatrix}^{0}_{n}\mathbf{R}&space;&&space;0\\&space;0&space;&&space;^{0}_{n}\mathbf{R}^{T}\end{bmatrix}J(q)\dot{q}={^{T}J(q)\dot{q}}" title="\begin{bmatrix}^{n}v\\ ^{n}w\end{bmatrix}=\begin{bmatrix}^{0}_{n}\mathbf{R} & 0\\ 0 & ^{0}_{n}\mathbf{R}^{T}\end{bmatrix}\begin{bmatrix}v\\ w\end{bmatrix}=\begin{bmatrix}^{0}_{n}\mathbf{R} & 0\\ 0 & ^{0}_{n}\mathbf{R}^{T}\end{bmatrix}J(q)\dot{q}={^{T}J(q)\dot{q}}" /> <span class="math display">\[
 \begin{bmatrix}
 ^{n}v\\ 
 ^{n}w
