@@ -1,190 +1,83 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>Inver Kine of IRB2600 · J.Pan Blog</title><meta name="description" content="IRB2600的标准DH法
-建立IRB2600的标准DH模型：
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>Inver Kine of IRB2600 · J.Pan Blog</title><meta name="description" content="IRB2600的标准DH法建立IRB2600的标准DH模型：
 
- 
-
-
-  Fig.1 ABB IRB2600 coordinate system   &amp;lt;/div&amp;gt; 
+            
+          Fig.1 ABB IRB2600 coordinate system      
+  
 
 IRB2600的改进D-H参数表：
 
-
-
-轴号
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"><meta name="keywords" content="J.Pan Blog,J.Pan"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/Blog/css/style.css"><link rel="stylesheet" href="/Blog/css/blog_basic.css"><link rel="stylesheet" href="/Blog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/Blog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/Blog/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">J.Pan Blog</a></h3><div class="description"><p>心之所愿，无事不成。<br> Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/GilbertPan97"><i class="fa fa-github"></i></a></li><li><a href="mailto:gilbertpan97@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=[1218305328]"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/ying-huo-62-34"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left: 10px;">|</span><img src="/Blog/images/gongan.png" style="height:10px;margin-left: 10px;position: relative;top: 1px;"><span style="margin-left: 2px;">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Inver Kine of IRB2600</a></h3></div><div class="post-content"><h2 id="irb2600的标准dh法">IRB2600的标准DH法</h2>
-<p><strong>建立IRB2600的标准DH模型：</strong></p>
+   
+     轴号
+     
+     
+     
+"><meta name="keywords" content="J.Pan Blog,J.Pan"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/Blog/css/style.css"><link rel="stylesheet" href="/Blog/css/blog_basic.css"><link rel="stylesheet" href="/Blog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/Blog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/Blog/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">J.Pan Blog</a></h3><div class="description"><p>心之所愿，无事不成。<br> Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/GilbertPan97"><i class="fa fa-github"></i></a></li><li><a href="mailto:gilbertpan97@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=[1218305328]"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/ying-huo-62-34"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left: 10px;">|</span><img src="/Blog/images/gongan.png" style="height:10px;margin-left: 10px;position: relative;top: 1px;"><span style="margin-left: 2px;">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Inver Kine of IRB2600</a></h3></div><div class="post-content"><h2 id="IRB2600的标准DH法"><a href="#IRB2600的标准DH法" class="headerlink" title="IRB2600的标准DH法"></a>IRB2600的标准DH法</h2><p><strong>建立IRB2600的标准DH模型：</strong></p>
 <center>
-<img style="width: 1000px" src="./imgs/Robot frame system.png"  alt=""/> <br><br />
+    <img style="width: 1000px" src="./blog_imgs/Robot_frame_system.png"  alt=""/>    <br>    
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">      Fig.1 ABB IRB2600 coordinate system     </div> 
+  </center>
 
-<div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">
-<pre><code>  Fig.1 ABB IRB2600 coordinate system   &lt;/div&gt; </code></pre>
-</center>
 <p><strong>IRB2600的改进D-H参数表：</strong></p>
-<TABLE border="2">
-<TR>
-<TD>
-轴号<img src="https://latex.codecogs.com/svg.image?i-1" title="i-1" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\alpha_{i-1}" title="\alpha_{i-1}"/>
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?a_{i-1}" title="a_{i-1}" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?d_i" title="d_i" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_i" title="\theta_i" />
-</TD>
-</TR>
-<TR>
-<TD>
-1
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?d_1(445)" title="d_1(445)" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />
-</TD>
-</TR>
-<TR>
-<TD>
-2
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?-90^{\circ&space;}" title="-90^{\circ }" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?a_1(150)" title="a_1(150)" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_2&plus;90^{\circ&space;}" title="\theta_2+90^{\circ }" />
-</TD>
-</TR>
-<TR>
-<TD>
-3
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?a_2(-700)" title="a_2(-700)" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />
-</TD>
-</TR>
-<TR>
-<TD>
-4
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?90^{\circ&space;}" title="90^{\circ }" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?a_3(-115)" title="a_3(-115)" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?d_4(795)" title="d_4(795)" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_4" title="\theta_4" />
-</TD>
-</TR>
-<TR>
-<TD>
-5
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?-90^{\circ&space;}" title="-90^{\circ }" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />
-</TD>
-</TR>
-<TR>
-<TD>
-6
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?90^{\circ&space;}" title="90^{\circ }" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?0" title="0" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?d_6(85)" title="d_6(85)" />
-</TD>
-<TD>
-<img src="https://latex.codecogs.com/svg.image?\theta_6" title="\theta_6" />
-</TD>
-</TR>
+<TABLE  border="2">
+   <TR>
+     <TD>轴号<img src="https://latex.codecogs.com/svg.image?i-1" title="i-1" /></TD>
+     <TD><img src="https://latex.codecogs.com/svg.image?\alpha_{i-1}" title="\alpha_{i-1}"/></TD>
+     <TD><img src="https://latex.codecogs.com/svg.image?a_{i-1}" title="a_{i-1}" /></TD>
+     <TD><img src="https://latex.codecogs.com/svg.image?d_i" title="d_i" /></TD>
+     <TD><img src="https://latex.codecogs.com/svg.image?\theta_i" title="\theta_i" /></TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?d_1(445)" title="d_1(445)" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" /></TD>
+  </TR>
+  <TR>
+    <TD>2</TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?-90^{\circ&space;}" title="-90^{\circ }" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?a_1(150)" title="a_1(150)" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?\theta_2&plus;90^{\circ&space;}" title="\theta_2+90^{\circ }" /></TD>
+  </TR>
+  <TR>
+    <TD>3</TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?a_2(-700)" title="a_2(-700)" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" /></TD>
+  </TR>
+  <TR>
+    <TD>4</TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?90^{\circ&space;}" title="90^{\circ }" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?a_3(-115)" title="a_3(-115)" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?d_4(795)" title="d_4(795)" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?\theta_4" title="\theta_4" /></TD>
+  </TR>
+  <TR>
+    <TD>5</TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?-90^{\circ&space;}" title="-90^{\circ }" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" /></TD>
+  </TR>
+  <TR>
+    <TD>6</TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?90^{\circ&space;}" title="90^{\circ }" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?0" title="0" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?d_6(85)" title="d_6(85)" /></TD>
+    <TD><img src="https://latex.codecogs.com/svg.image?\theta_6" title="\theta_6" /></TD>
+  </TR>
 </TABLE>
+
 <p><img src="https://latex.codecogs.com/svg.image?\mathbf{T}^{6}_{0}=\begin{bmatrix}n_x&space;&&space;o_x&space;&&space;a_x&space;&&space;p_x\\&space;n_y&space;&&space;o_y&space;&&space;a_y&space;&&space;p_y\\&space;n_z&space;&&space;o_z&space;&&space;a_z&space;&&space;p_z\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{bmatrix}={\mathbf{T}^{1}_{0}}\cdot&space;{\mathbf{T}^{2}_{1}}\cdot{\mathbf{T}^3_{2}}\cdot{\mathbf{T}^4_{3}}\cdot{\mathbf{T}^5_{4}}\cdot{\mathbf{T}^6_{5}}" title="\mathbf{T}^{6}_{0}=\begin{bmatrix}n_x & o_x & a_x & p_x\\ n_y & o_y & a_y & p_y\\ n_z & o_z & a_z & p_z\\ 0 & 0 & 0 & 1\end{bmatrix}={\mathbf{T}^{1}_{0}}\cdot {\mathbf{T}^{2}_{1}}\cdot{\mathbf{T}^3_{2}}\cdot{\mathbf{T}^4_{3}}\cdot{\mathbf{T}^5_{4}}\cdot{\mathbf{T}^6_{5}}" /></p>
 <p>其中<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{i-1}^{i}" title="\mathbf{T}_{i-1}^{i}" />代表后置连杆坐标系下的齐次变换矩阵，与Modified D-H参数对应：</p>
-<h2 id="irb2600的逆运动学解析解推算">IRB2600的逆运动学解析解推算</h2>
-<h3 id="推算theta_1">推算<span class="math inline">\(\theta_{1}\)</span>:</h3>
-<p>利用关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0)^{-1}\mathbf{T}_{end}=\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0)^{-1}T_{end}=T^2_1T^3_2T^4_3T^5_4T^6_5" />对<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />进行推算，通过对比矩阵元素之间关系，可按照如下过程求解<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" /></p>
+<h2 id="IRB2600的逆运动学解析解推算"><a href="#IRB2600的逆运动学解析解推算" class="headerlink" title="IRB2600的逆运动学解析解推算"></a>IRB2600的逆运动学解析解推算</h2><h3 id="推算-theta-1"><a href="#推算-theta-1" class="headerlink" title="推算$\theta_{1}$:"></a>推算$\theta_{1}$:</h3><p>利用关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0)^{-1}\mathbf{T}_{end}=\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0)^{-1}T_{end}=T^2_1T^3_2T^4_3T^5_4T^6_5" />对<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />进行推算，通过对比矩阵元素之间关系，可按照如下过程求解<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle\frac{\mathbf{T}_{left}(2,4)}{\mathbf{T}_{left}(2,3)}=\frac{\mathbf{T}_{right}(2,4)}{\mathbf{T}_{right}(2,3)}" title="\displaystyle\frac{T_{left}(2,4)}{T_{left}(2,3)}=\frac{T_{right}(2,4)}{T_{right}(2,3)}" /></p>
 <p>化简得到：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle\theta_{1}=arctan\frac{a_yd_6-p_y}{a_xd_6-p_x}" title="\displaystyle\theta_{1}=arctan\frac{a_yd_6-p_y}{a_xd_6-p_x}" /></p>
 <p>对于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的计算，将会产生两个解。</p>
-<h3 id="推算theta_2和theta_3">推算<span class="math inline">\(\theta_2\)</span>和<span class="math inline">\(\theta_3\)</span>:</h3>
-<p><img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />和<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />可以由一个等式关系确定：<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" title="\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" />，首先为确定<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的关系式，通过矩阵中如下元素的等式关系：</p>
+<h3 id="推算-theta-2-和-theta-3"><a href="#推算-theta-2-和-theta-3" class="headerlink" title="推算$\theta_2$和$\theta_3$:"></a>推算$\theta_2$和$\theta_3$:</h3><p><img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />和<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />可以由一个等式关系确定：<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" title="\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" />，首先为确定<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的关系式，通过矩阵中如下元素的等式关系：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(2,4)=\mathbf{T}_{right}(2,4)&space;" title="\displaystyle T_{left}(2,4)=T_{right}(2,4) " /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(3,4)=\mathbf{T}_{right}(3,4)&space;" title="\displaystyle T_{left}(3,4)=T_{right}(3,4) " /></p>
 <p>化简得：</p>
@@ -204,9 +97,8 @@ IRB2600的改进D-H参数表：
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;Y=cos(\theta_2&plus;\theta_3)=\frac&space;{a_3B-d_4A}{a_3^2&plus;d_4^2}" title="\displaystyle Y=cos(\theta_2+\theta_3)=\frac {a_3B-d_4A}{a_3^2+d_4^2}" /></p>
 <p>其中：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;A&space;=&space;k_1-a_2sin\theta_2,&space;B=k_2-a_2cos\theta_2&space;" title="\displaystyle A = k_1-a_2sin\theta_2, B=k_2-a_2cos\theta_2 " /></p>
-<p>结合式(12)(13)(14)和已算出的<span class="math inline">\(\theta_1 \theta_2\)</span>可以计算出关节角<span class="math inline">\(\theta_3\)</span>。</p>
-<h3 id="推算theta_5theta_4和theta_6">推算<span class="math inline">\(\theta_{5}\)</span>、<span class="math inline">\(\theta_4\)</span>和<span class="math inline">\(\theta_6\)</span>:</h3>
-<p>经过几次推算尝试，观察矩阵元素的特征（<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{right}" title="T_{right}" />矩阵中元素表达式只含<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />且简单，<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}" title="T_{left}" />矩阵中只含<img src="https://latex.codecogs.com/svg.image?\theta_1\theta_2\theta_3" title="\theta_1\theta_2\theta_3" />且已求得），因此确定关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2)^{-1}\mathbf{T}_{end}=\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" />为推导<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />的等式关系，根据矩阵中元素等式关系：</p>
+<p>结合式(12)(13)(14)和已算出的$\theta_1 \theta_2$可以计算出关节角$\theta_3$。</p>
+<h3 id="推算-theta-5-、-theta-4-和-theta-6"><a href="#推算-theta-5-、-theta-4-和-theta-6" class="headerlink" title="推算$\theta_{5}$、$\theta_4$和$\theta_6$:"></a>推算$\theta_{5}$、$\theta_4$和$\theta_6$:</h3><p>经过几次推算尝试，观察矩阵元素的特征（<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{right}" title="T_{right}" />矩阵中元素表达式只含<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />且简单，<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}" title="T_{left}" />矩阵中只含<img src="https://latex.codecogs.com/svg.image?\theta_1\theta_2\theta_3" title="\theta_1\theta_2\theta_3" />且已求得），因此确定关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2)^{-1}\mathbf{T}_{end}=\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" />为推导<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />的等式关系，根据矩阵中元素等式关系：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(2,3)=\mathbf{T}_{right}(2,3)" title="\displaystyle \mathbf{T}_{left}(2,3)=\mathbf{T}_{right}(2,3)" /></p>
 <p>可以直接求得<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\theta_5=arccos(a_xcos(\theta_2&plus;\theta_3)cos\theta_1&plus;a_ycos(\theta_2&plus;\theta_3)sin\theta_1-a_zsin(\theta_2&plus;\theta_3))" title="\displaystyle \theta_5=arccos(a_xcos(\theta_2+\theta_3)cos\theta_1+a_ycos(\theta_2+\theta_3)sin\theta_1-a_zsin(\theta_2+\theta_3))" /></p>
@@ -225,26 +117,21 @@ IRB2600的改进D-H参数表：
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;sin\theta_6=\frac{o_xcos(\theta_2&plus;\theta_3)cos\theta_1&plus;o_ycos(\theta_2&plus;\theta_3)sin\theta_1-o_zsin(\theta_2&plus;\theta_3)}{sin\theta_5}" title="\displaystyle sin\theta_6=\frac{o_xcos(\theta_2+\theta_3)cos\theta_1+o_ycos(\theta_2+\theta_3)sin\theta_1-o_zsin(\theta_2+\theta_3)}{sin\theta_5}" /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;cos\theta_6=\frac{n_zsin(\theta_2&plus;\theta_3)-n_xcos(\theta_2&plus;\theta_3)cos\theta_1-n_ycos(\theta_2&plus;\theta_3)sin\theta_1}{sin\theta_5}&space;" title="\displaystyle cos\theta_6=\frac{n_zsin(\theta_2+\theta_3)-n_xcos(\theta_2+\theta_3)cos\theta_1-n_ycos(\theta_2+\theta_3)sin\theta_1}{sin\theta_5} " /></p>
 <p>由式(23)(24)可求得<img src="https://latex.codecogs.com/svg.image?\theta_6" title="\theta_6" />，其解与<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />唯一对应。</p>
-<h2 id="矢量积法求解雅可比">矢量积法求解雅可比</h2>
-<p>雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />可以看成是关节空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{q}" title="\dot{q}" />向笛卡尔空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{x}" title="\dot{x}" />的线性映射。雅可比矩阵 <span class="math inline">\(J(q)\)</span> 依赖于机器人的构形，是一个依赖于 <span class="math inline">\(q\)</span> 的线性变换矩阵，雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />不一定是方阵，它可能是长矩阵，也可能是高矩阵，<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />的行数等于机器人在笛卡尔空间中的自由度数，比如平面操作臂的雅可比矩阵有3行，6关节的空间操作臂的雅可比矩阵是6行，对于关节的机器人，<img src="https://latex.codecogs.com/svg.image?n" title="n" />其雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J\in&space;\Re&space;^{6&space;\times&space;n}" title="J\in \Re ^{6 \times n}" />是<img src="https://latex.codecogs.com/svg.image?6&space;\times&space;n" title="6 \times n" />的矩阵，其中前3行表示对末端执行器线速度<img src="https://latex.codecogs.com/svg.image?v" title="v" />的传递比，后3行表示对末端执行器角速度<img src="https://latex.codecogs.com/svg.image?w" title="w" />的传递比。</p>
+<h2 id="矢量积法求解雅可比"><a href="#矢量积法求解雅可比" class="headerlink" title="矢量积法求解雅可比"></a>矢量积法求解雅可比</h2><p>雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />可以看成是关节空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{q}" title="\dot{q}" />向笛卡尔空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{x}" title="\dot{x}" />的线性映射。雅可比矩阵 $J(q)$ 依赖于机器人的构形，是一个依赖于 $q$ 的线性变换矩阵，雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />不一定是方阵，它可能是长矩阵，也可能是高矩阵，<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />的行数等于机器人在笛卡尔空间中的自由度数，比如平面操作臂的雅可比矩阵有3行，6关节的空间操作臂的雅可比矩阵是6行，对于关节的机器人，<img src="https://latex.codecogs.com/svg.image?n" title="n" />其雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J\in&space;\Re&space;^{6&space;\times&space;n}" title="J\in \Re ^{6 \times n}" />是<img src="https://latex.codecogs.com/svg.image?6&space;\times&space;n" title="6 \times n" />的矩阵，其中前3行表示对末端执行器线速度<img src="https://latex.codecogs.com/svg.image?v" title="v" />的传递比，后3行表示对末端执行器角速度<img src="https://latex.codecogs.com/svg.image?w" title="w" />的传递比。</p>
 <p>另一方面，每一列代表相应的关节速度<img src="https://latex.codecogs.com/svg.image?\dot{q_{i}}" title="\dot{q_{i}}" />对末端执行器线速度和角速度的传递比。</p>
 <p><img src="https://latex.codecogs.com/svg.image?\dot{x}=J(q)\dot{q}" title="\dot{x}=J(q)\dot{q}" /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\begin{bmatrix}v\\&space;w\end{bmatrix}=\begin{bmatrix}J_{l1}&space;&&space;J_{l2}&space;&&space;J_{l3}&space;&&space;J_{l4}&space;&&space;J_{l5}&space;&&space;J_{l6}\\&space;J_{a1}&space;&&space;J_{a2}&space;&&space;J_{a3}&space;&&space;J_{a4}&space;&&space;J_{a5}&space;&&space;J_{a6}\end{bmatrix}\begin{bmatrix}\dot{q_{1}}\\&space;\dot{q_{2}}\\&space;\dot{q_{3}}\\&space;\dot{q_{4}}\\&space;\dot{q_{5}}\\&space;\dot{q_{6}}\end{bmatrix}" title="\begin{bmatrix}v\\ w\end{bmatrix}=\begin{bmatrix}J_{l1} & J_{l2} & J_{l3} & J_{l4} & J_{l5} & J_{l6}\\ J_{a1} & J_{a2} & J_{a3} & J_{a4} & J_{a5} & J_{a6}\end{bmatrix}\begin{bmatrix}\dot{q_{1}}\\ \dot{q_{2}}\\ \dot{q_{3}}\\ \dot{q_{4}}\\ \dot{q_{5}}\\ \dot{q_{6}}\end{bmatrix}" /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\left\{\begin{matrix}v=J_{l1}\dot{q_{1}}&space;&plus;&space;J_{l2}\dot{q_{2}}&space;&plus;&space;J_{l3}\dot{q_{3}}&space;&plus;&space;J_{l4}\dot{q_{4}}&space;&plus;&space;J_{l5}\dot{q_{5}}&space;&plus;&space;J_{l6}\dot{q_{6}}&space;\\w=J_{a1}\dot{q_{1}}&space;&plus;&space;J_{a2}\dot{q_{2}}&space;&plus;&space;J_{a3}\dot{q_{3}}&space;&plus;&space;J_{a4}\dot{q_{4}}&space;&plus;&space;J_{a5}\dot{q_{5}}&space;&plus;&space;J_{a6}\dot{q_{6}}\end{matrix}\right." title="\left\{\begin{matrix}v=J_{l1}\dot{q_{1}} + J_{l2}\dot{q_{2}} + J_{l3}\dot{q_{3}}) + J_{l4}\dot{q_{4}} + J_{l5}\dot{q_{5}} + J_{l6}\dot{q_{6}} \\w=J_{a1}\dot{q_{1}} + J_{a2}\dot{q_{2}} + J_{a3}\dot{q_{3}} + J_{a4}\dot{q_{4}} + J_{a5}\dot{q_{5}} + J_{a6}\dot{q_{6}}\end{matrix}\right." /></p>
 <p>公式中， <img src="https://latex.codecogs.com/svg.image?J_{li}" title="J_{li}" /> 和<img src="https://latex.codecogs.com/svg.image?J_{ai}" title="J_{ai}" />分别表示关节<img src="https://latex.codecogs.com/svg.image?i" title="i" />的单位关节速度引起的末端执行器的线速度和角速度。</p>
 <p>下面基于矢量积法，不求导而直接构造出 <img src="https://latex.codecogs.com/svg.image?J_{li}" title="J_{li}" /> 和<img src="https://latex.codecogs.com/svg.image?J_{ai}" title="J_{ai}" />。</p>
-<p>Whitney于1972年提出雅可比矩阵的矢量积构造方法。线速度和角速度分别使用<img src="https://latex.codecogs.com/svg.image?v" title="v" />和 <span class="math inline">\(w\)</span> 来表示。而 <span class="math inline">\(v\)</span> 和<img src="https://latex.codecogs.com/svg.image?w" title="w" />与关节速度<img src="https://latex.codecogs.com/svg.image?\dot{q_{i}}" title="\dot{q_{i}}" />有关。</p>
-<ol type="1">
-<li>对于移动关节 <img src="https://latex.codecogs.com/svg.image?i" title="i" />，在末端执行器上产生与<img src="https://latex.codecogs.com/svg.image?z_{i}" title="z_{i}" />相同的线速度<img src="https://latex.codecogs.com/svg.image?v" title="v" />。</li>
-</ol>
+<p>Whitney于1972年提出雅可比矩阵的矢量积构造方法。线速度和角速度分别使用<img src="https://latex.codecogs.com/svg.image?v" title="v" />和 $w$ 来表示。而 $v$ 和<img src="https://latex.codecogs.com/svg.image?w" title="w" />与关节速度<img src="https://latex.codecogs.com/svg.image?\dot{q_{i}}" title="\dot{q_{i}}" />有关。</p>
+<p>(1) 对于移动关节 <img src="https://latex.codecogs.com/svg.image?i" title="i" />，在末端执行器上产生与<img src="https://latex.codecogs.com/svg.image?z_{i}" title="z_{i}" />相同的线速度<img src="https://latex.codecogs.com/svg.image?v" title="v" />。</p>
 <p><img src="https://latex.codecogs.com/svg.image?\begin{bmatrix}v\\&space;w\end{bmatrix}=\begin{bmatrix}z_{i}\\&space;0\end{bmatrix}\dot{q_{i}}&space;\Rightarrow&space;J_{i}=\begin{bmatrix}z_{i}\\&space;0\end{bmatrix}" title="\begin{bmatrix}v\\ w\end{bmatrix}=\begin{bmatrix}z_{i}\\ 0\end{bmatrix}\dot{q_{i}} \Rightarrow J_{i}=\begin{bmatrix}z_{i}\\ 0\end{bmatrix}" /></p>
-<ol start="2" type="1">
-<li>对于旋转关节<img src="https://latex.codecogs.com/svg.image?i" title="i" />，在末端执行器上产生的角速度<img src="https://latex.codecogs.com/svg.image?w" title="w" />为：</li>
-</ol>
+<p>(2) 对于旋转关节<img src="https://latex.codecogs.com/svg.image?i" title="i" />，在末端执行器上产生的角速度<img src="https://latex.codecogs.com/svg.image?w" title="w" />为：</p>
 <p><img src="https://latex.codecogs.com/svg.image?w=z_{i}\dot{q_{i}}" title="w=z_{i}\dot{q_{i}}" /></p>
-<p>同时在末端执行器上产生的线速度为矢量积，即：</p>
+<p> 同时在末端执行器上产生的线速度为矢量积，即：</p>
 <p><img src="https://latex.codecogs.com/svg.image?v=(z_{i}&space;\times&space;{^{i}p^{0}_{n}})&space;\dot{q}_{i}" title="v=(z_{i} \times {^{i}p^{0}_{n}}) \dot{q}_{i}" /></p>
-<p>因此，雅可比矩阵的第 <span class="math inline">\(i\)</span> 列为：</p>
+<p>因此，雅可比矩阵的第 $i$ 列为：</p>
 <p><img src="https://latex.codecogs.com/svg.image?J_{i}=\begin{bmatrix}z_{i}&space;\times&space;{^{i}p^{0}_{n}}\\&space;z_{i}\end{bmatrix}=\begin{bmatrix}z_{i}&space;\times&space;({^{0}_{i}R&space;{^{i}p_{n}}})\\&space;z_{i}\end{bmatrix}" title="J_{i}=\begin{bmatrix}z_{i} \times {^{i}p^{0}_{n}}\\ z_{i}\end{bmatrix}=\begin{bmatrix}z_{i} \times ({^{0}_{i}R {^{i}p_{n}}})\\ z_{i}\end{bmatrix}" /></p>
 <p>其中，<img src="https://latex.codecogs.com/svg.image?z_{i}" title="z_{i}" />是坐标系{<img src="https://latex.codecogs.com/svg.image?i" title="i" />} 的<img src="https://latex.codecogs.com/svg.image?z" title="z" />轴单位矢量（在基座坐标系{<img src="https://latex.codecogs.com/svg.image?0" title="0" />}中表示）。</p>
 <p>公式(7)中，<img src="https://latex.codecogs.com/svg.image?^{i}p^{0}_{n}" title="^{i}p^{0}_{n}" />表示末端执行器坐标原点想对于坐标系{<img src="https://latex.codecogs.com/svg.image?i" title="i" />}的位置矢量在基坐标系{<img src="https://latex.codecogs.com/svg.image?0" title="0" />}中的表示，即：</p>
