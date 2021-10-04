@@ -1,198 +1,226 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Core"><title>Inver Kine of IRB2600 · J.Pan Blog</title><meta name="description" content="IRB2600的标准DH法
 建立IRB2600的标准DH模型：
 
-机器人坐标结构图1
-
-IRB2600的标准DH参数表：
+ 
 
 
+  Fig.1 ABB IRB2600 coordinate system   &amp;lt;/div&amp;gt; 
 
-轴号\(i\)
-\(\alpha_{i-1}\)
-\(a_{i-1}\)
-\(d_{i}\)
-\(\theta_{i}\)
+IRB2600的改进D-H参数表：
+
+
+
+轴号
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 1
-0
-0
-\(d_{1}(445)\)"><meta name="keywords" content="J.Pan Blog,J.Pan"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/Blog/css/style.css"><link rel="stylesheet" href="/Blog/css/blog_basic.css"><link rel="stylesheet" href="/Blog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/Blog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/Blog/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">J.Pan Blog</a></h3><div class="description"><p>心之所愿，无事不成。<br> Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/GilbertPan97"><i class="fa fa-github"></i></a></li><li><a href="mailto:gilbertpan97@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=[1218305328]"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/ying-huo-62-34"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left: 10px;">|</span><img src="/Blog/images/gongan.png" style="height:10px;margin-left: 10px;position: relative;top: 1px;"><span style="margin-left: 2px;">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Inver Kine of IRB2600</a></h3></div><div class="post-content"><h2 id="irb2600的标准dh法">IRB2600的标准DH法</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"><meta name="keywords" content="J.Pan Blog,J.Pan"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/Blog/css/style.css"><link rel="stylesheet" href="/Blog/css/blog_basic.css"><link rel="stylesheet" href="/Blog/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/Blog/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/Blog/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">J.Pan Blog</a></h3><div class="description"><p>心之所愿，无事不成。<br> Nothing is impossible to a willing heart.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/GilbertPan97"><i class="fa fa-github"></i></a></li><li><a href="mailto:gilbertpan97@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=[1218305328]"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/ying-huo-62-34"><i class="fa fa-mortar-board"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2017 - 2020 </span><i class="fa fa-star"></i><span> Core</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><a href="http://www.beian.miit.gov.cn/" target="_blank">粤ICP备15011643号</a><span style="height:10px;margin-left: 10px;">|</span><img src="/Blog/images/gongan.png" style="height:10px;margin-left: 10px;position: relative;top: 1px;"><span style="margin-left: 2px;">粤公网安备 44030402003967号</span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Inver Kine of IRB2600</a></h3></div><div class="post-content"><h2 id="irb2600的标准dh法">IRB2600的标准DH法</h2>
 <p><strong>建立IRB2600的标准DH模型：</strong></p>
-<figure>
-<img src="./imgs/Robot%20frame%20system.png" alt="机器人坐标结构图1" /><figcaption aria-hidden="true">机器人坐标结构图1</figcaption>
-</figure>
-<p><strong>IRB2600的标准DH参数表：</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">轴号<span class="math inline">\(i\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\alpha_{i-1}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(a_{i-1}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(d_{i}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\theta_{i}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(d_{1}(445)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\theta_{1}\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;"><span class="math inline">\(-90^{\circ}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(a_{1}(150)\)</span></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(\theta_{2}+90^{\circ}\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(a_{2}(-700)\)</span></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(\theta_{3}\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><span class="math inline">\(90^{\circ}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(a_{3}(-115)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d_{4}(795)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\theta_{4}\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;"><span class="math inline">\(-90^{\circ}\)</span></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(\theta_{5}\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;"><span class="math inline">\(90^{\circ}\)</span></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(d_{6}(85)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\theta_{6}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[
-^{0}_{6}T=\begin{bmatrix}
-n_x &amp; o_x &amp; a_x &amp; p_x\\ 
-n_y &amp; o_y &amp; a_y &amp; p_y\\ 
-n_z &amp; o_z &amp; a_z &amp; p_z\\ 
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix}
-={^{0}_{1}T}{^{1}_{2}T}{^2_{3}T}{^3_{4}T}{^4_{5}T}{^5_{6}T} \tag{10}
-\]</span> 其中： <span class="math display">\[
-^{0}_{1}T=\begin{bmatrix}
-cos(\theta_{1}) &amp; -sin(\theta_{1}) &amp; 0 &amp; 0\\ 
-sin(\theta_{1}) &amp; cos(\theta_{1}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; 1 &amp; d_{1}\\ 
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix} \tag{11}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}  
-^{1}_{2}T &amp;=\begin{bmatrix}
-cos(\theta_{2}+90^{\circ}) &amp; -sin(\theta_{2}+90^{\circ}) &amp; 0 &amp; a_{1}\\ 
-0 &amp; 0 &amp; 1 &amp; 0\\ 
--sin(\theta_{2}+90^{\circ}) &amp; -cos(\theta_{2}+90^{\circ}) &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix} \\
-&amp;=\left[\begin{matrix}- 
-\sin{\left(\theta_{2} \right)} &amp; - \cos{\left(\theta_{2} \right)} &amp; 0 &amp;  a_{1}\\
-0 &amp; 0 &amp; 1 &amp; 0\\
--\cos(\theta_{2}) &amp; sin(\theta_{2}) &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right] \tag{12}
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-^{2}_{3}T=\begin{bmatrix}
-cos(\theta_{3}) &amp; -sin(\theta_{3}) &amp; 0 &amp; a_{2}\\ 
-sin(\theta_{3}) &amp; cos(\theta_{3}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; 1 &amp; 0\\ 
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix} \tag{13}
-\]</span></p>
-<p><span class="math display">\[
-\begin{align}
-^{3}_{4}T &amp;=\begin{bmatrix}
-cos(\theta_{4}) &amp; -sin(\theta_{4})  &amp; 0&amp; a_{3}\\ 
-0 &amp; 0 &amp; -1 &amp; -d_{4}\\ 
-sin(\theta_{4}) &amp; cos(\theta_{4}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix}  \\
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-^{4}_{5}T=\begin{bmatrix}
-cos(\theta_{5}) &amp; -sin(\theta_{5}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; 1 &amp; 0\\ 
--sin(\theta_{5}) &amp; -cos(\theta_{5}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix} \tag{15}
-\]</span></p>
-<p><span class="math display">\[
-^{5}_{6}T=\begin{bmatrix}
-cos(\theta_{6}) &amp; -sin(\theta_{6}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; -1 &amp; -d_{6}\\ 
-sin(\theta_{6}) &amp; cos(\theta_{6}) &amp; 0 &amp; 0\\ 
-0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix} \tag{16}
-\]</span> ## IRB2600的逆运动学解析解推算 ### 推算<span class="math inline">\(\theta_{1}\)</span>:</p>
-<p>利用关系式：<span class="math inline">\((T^1_0)^{-1}T_{end}=T^2_1T^3_2T^4_3T^5_4T^6_5\)</span>对<span class="math inline">\(\theta_1\)</span>进行推算，通过对比矩阵元素之间关系，可按照如下过程求解<span class="math inline">\(\theta_1\)</span> <span class="math display">\[
-\displaystyle\frac{T_{left}(2,4)}{T_{left}(2,3)}=\frac{T_{right}(2,4)}{T_{right}(2,3)}\tag{1}
-\]</span> 化简得到： <span class="math display">\[
-\displaystyle\theta_{1}=arctan\frac{a_yd_6-p_y}{a_xd_6-p_x}\tag2
-\]</span> 对于<span class="math inline">\(\theta_1\)</span>的计算，将会产生两个解。</p>
+<center>
+<img style="width: 1000px" src="./imgs/Robot frame system.png"  alt=""/> <br><br />
+
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">
+<pre><code>  Fig.1 ABB IRB2600 coordinate system   &lt;/div&gt; </code></pre>
+</center>
+<p><strong>IRB2600的改进D-H参数表：</strong></p>
+<TABLE border="2">
+<TR>
+<TD>
+轴号<img src="https://latex.codecogs.com/svg.image?i-1" title="i-1" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\alpha_{i-1}" title="\alpha_{i-1}"/>
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?a_{i-1}" title="a_{i-1}" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?d_i" title="d_i" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_i" title="\theta_i" />
+</TD>
+</TR>
+<TR>
+<TD>
+1
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?d_1(445)" title="d_1(445)" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />
+</TD>
+</TR>
+<TR>
+<TD>
+2
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?-90^{\circ&space;}" title="-90^{\circ }" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?a_1(150)" title="a_1(150)" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_2&plus;90^{\circ&space;}" title="\theta_2+90^{\circ }" />
+</TD>
+</TR>
+<TR>
+<TD>
+3
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?a_2(-700)" title="a_2(-700)" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />
+</TD>
+</TR>
+<TR>
+<TD>
+4
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?90^{\circ&space;}" title="90^{\circ }" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?a_3(-115)" title="a_3(-115)" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?d_4(795)" title="d_4(795)" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_4" title="\theta_4" />
+</TD>
+</TR>
+<TR>
+<TD>
+5
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?-90^{\circ&space;}" title="-90^{\circ }" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />
+</TD>
+</TR>
+<TR>
+<TD>
+6
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?90^{\circ&space;}" title="90^{\circ }" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?0" title="0" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?d_6(85)" title="d_6(85)" />
+</TD>
+<TD>
+<img src="https://latex.codecogs.com/svg.image?\theta_6" title="\theta_6" />
+</TD>
+</TR>
+</TABLE>
+<p><img src="https://latex.codecogs.com/svg.image?\mathbf{T}^{6}_{0}=\begin{bmatrix}n_x&space;&&space;o_x&space;&&space;a_x&space;&&space;p_x\\&space;n_y&space;&&space;o_y&space;&&space;a_y&space;&&space;p_y\\&space;n_z&space;&&space;o_z&space;&&space;a_z&space;&&space;p_z\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{bmatrix}={\mathbf{T}^{1}_{0}}\cdot&space;{\mathbf{T}^{2}_{1}}\cdot{\mathbf{T}^3_{2}}\cdot{\mathbf{T}^4_{3}}\cdot{\mathbf{T}^5_{4}}\cdot{\mathbf{T}^6_{5}}" title="\mathbf{T}^{6}_{0}=\begin{bmatrix}n_x & o_x & a_x & p_x\\ n_y & o_y & a_y & p_y\\ n_z & o_z & a_z & p_z\\ 0 & 0 & 0 & 1\end{bmatrix}={\mathbf{T}^{1}_{0}}\cdot {\mathbf{T}^{2}_{1}}\cdot{\mathbf{T}^3_{2}}\cdot{\mathbf{T}^4_{3}}\cdot{\mathbf{T}^5_{4}}\cdot{\mathbf{T}^6_{5}}" /></p>
+<p>其中<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{i-1}^{i}" title="\mathbf{T}_{i-1}^{i}" />代表后置连杆坐标系下的齐次变换矩阵，与Modified D-H参数对应：</p>
+<h2 id="irb2600的逆运动学解析解推算">IRB2600的逆运动学解析解推算</h2>
+<h3 id="推算theta_1">推算<span class="math inline">\(\theta_{1}\)</span>:</h3>
+<p>利用关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0)^{-1}\mathbf{T}_{end}=\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0)^{-1}T_{end}=T^2_1T^3_2T^4_3T^5_4T^6_5" />对<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />进行推算，通过对比矩阵元素之间关系，可按照如下过程求解<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle\frac{\mathbf{T}_{left}(2,4)}{\mathbf{T}_{left}(2,3)}=\frac{\mathbf{T}_{right}(2,4)}{\mathbf{T}_{right}(2,3)}" title="\displaystyle\frac{T_{left}(2,4)}{T_{left}(2,3)}=\frac{T_{right}(2,4)}{T_{right}(2,3)}" /></p>
+<p>化简得到：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle\theta_{1}=arctan\frac{a_yd_6-p_y}{a_xd_6-p_x}" title="\displaystyle\theta_{1}=arctan\frac{a_yd_6-p_y}{a_xd_6-p_x}" /></p>
+<p>对于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的计算，将会产生两个解。</p>
 <h3 id="推算theta_2和theta_3">推算<span class="math inline">\(\theta_2\)</span>和<span class="math inline">\(\theta_3\)</span>:</h3>
-<p><span class="math inline">\(\theta_2\)</span>和<span class="math inline">\(\theta_3\)</span>可以由一个等式关系确定：<span class="math inline">\(T_{end}(T^5_4T^6_5)^{-1}=T^1_0T^2_1T^3_2T^4_3\)</span>，首先为确定<span class="math inline">\(\theta_2\)</span>关于<span class="math inline">\(\theta_1\)</span>的关系式，通过矩阵中如下元素的等式关系： <span class="math display">\[
-\displaystyle T_{left}(2,4)=T_{right}(2,4) \tag3
-\]</span> <span class="math display">\[
-\displaystyle T_{left}(3,4)=T_{right}(3,4) \tag4
-\]</span> 化简得： <span class="math display">\[
-\displaystyle a_3sin(\theta_2+\theta_3)-d_4cos(\theta_2+\theta_3)=a_1-a_2sin\theta_2-\frac{p_y-d_6a_y}{sin\theta_1} \tag{5}
-\]</span> <span class="math display">\[
-d_4sin(\theta_2+\theta_3)+a_3cos(\theta_2+\theta_3)=d_1-a_2cos(\theta_2)-(p_z-d_6a_z) \tag{6}
-\]</span> 为化简需要，令<span class="math inline">\(X=sin(\theta_2+\theta_3)\)</span>和<span class="math inline">\(Y=cos(\theta_2+\theta_3)\)</span>，通过式(5)和(6)联立起来可以消除<span class="math inline">\(X\)</span>和<span class="math inline">\(Y\)</span>，从而得到： <span class="math display">\[
-\displaystyle {a_3}^2+{d_4}^2=(k_1-a_2sin\theta_2)^2+(k_2-a_2cos\theta_2)^2 \tag{7}
-\]</span> 其中： <span class="math display">\[
-\displaystyle k_1=a_1-\frac{p_y-d_6a_y}{sin\theta_1} \tag{8}
-\]</span> <span class="math display">\[
-\displaystyle k_2=d_1-(p_z-d_6a_z) \tag9
-\]</span> 观察发现，式(7)中只有<span class="math inline">\(\theta_1\)</span>和<span class="math inline">\(\theta_2\)</span>未知量，由此可建立<span class="math inline">\(\theta_2\)</span>关于<span class="math inline">\(\theta_1\)</span>的关系表达式，即<span class="math inline">\(\theta_2\)</span>的解析解： <span class="math display">\[
-\displaystyle \theta_2=arcsin \frac{k_1^2+k_2^2+a_2^2-(a_3^2+d_4^2)}{ 2a_2\sqrt{k_1^2+k_2^2} }-\phi \tag{10}
-\]</span> <span class="math display">\[
-\displaystyle sin\phi =\frac {k_2} {\sqrt{k_1^2+k_2^2} } ，cos\phi =\frac {k_1} {\sqrt{k_1^2+k_2^2} } \tag{11}
-\]</span> 对于<span class="math inline">\(\theta_2\)</span>的计算，亦会产生两个解。</p>
-<p>以上求出了<span class="math inline">\(\theta_1\)</span>和<span class="math inline">\(\theta_2\)</span>，将式(5)(6)中<span class="math inline">\(X\)</span>和<span class="math inline">\(Y\)</span>作为未知数，求出： <span class="math display">\[
-\displaystyle X=sin(\theta_2+\theta_3)=\frac {a_3A+d_4B}{a_3^2+d_4^2} \tag{12}
-\]</span> <span class="math display">\[
-\displaystyle Y=cos(\theta_2+\theta_3)=\frac {a_3B-d_4A}{a_3^2+d_4^2} \tag{13}
-\]</span> 其中： <span class="math display">\[
-\displaystyle A = k_1-a_2sin\theta_2  ，B=k_2-a_2cos\theta_2 \tag{14}
-\]</span> 结合式(12)(13)(14)和已算出的<span class="math inline">\(\theta_1 \theta_2\)</span>可以计算出关节角<span class="math inline">\(\theta_3\)</span>。</p>
+<p><img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />和<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />可以由一个等式关系确定：<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" title="\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" />，首先为确定<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的关系式，通过矩阵中如下元素的等式关系：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(2,4)=\mathbf{T}_{right}(2,4)&space;" title="\displaystyle T_{left}(2,4)=T_{right}(2,4) " /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(3,4)=\mathbf{T}_{right}(3,4)&space;" title="\displaystyle T_{left}(3,4)=T_{right}(3,4) " /></p>
+<p>化简得：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;a_3sin(\theta_2&plus;\theta_3)-d_4cos(\theta_2&plus;\theta_3)=a_1-a_2sin\theta_2-\frac{p_y-d_6a_y}{sin\theta_1}&space;" title="\displaystyle a_3sin(\theta_2+\theta_3)-d_4cos(\theta_2+\theta_3)=a_1-a_2sin\theta_2-\frac{p_y-d_6a_y}{sin\theta_1} " /></p>
+<p><img src="https://latex.codecogs.com/svg.image?d_4sin(\theta_2&plus;\theta_3)&plus;a_3cos(\theta_2&plus;\theta_3)=d_1-a_2cos(\theta_2)-(p_z-d_6a_z)&space;" title="d_4sin(\theta_2+\theta_3)+a_3cos(\theta_2+\theta_3)=d_1-a_2cos(\theta_2)-(p_z-d_6a_z) " /></p>
+<p>为化简需要，令<img src="https://latex.codecogs.com/svg.image?X=sin(\theta_2&plus;\theta_3)" title="X=sin(\theta_2+\theta_3)" />和<img src="https://latex.codecogs.com/svg.image?Y=cos(\theta_2&plus;\theta_3)" title="Y=cos(\theta_2+\theta_3)" />，通过式(5)和(6)联立起来可以消除<img src="https://latex.codecogs.com/svg.image?X" title="X" />和<img src="https://latex.codecogs.com/svg.image?Y" title="Y" />，从而得到：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;k_1=a_1-\frac{p_y-d_6a_y}{sin\theta_1}&space;" title="\displaystyle k_1=a_1-\frac{p_y-d_6a_y}{sin\theta_1} " /></p>
+<p>其中：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;k_1=a_1-\frac{p_y-d_6a_y}{sin\theta_1}&space;" title="\displaystyle k_1=a_1-\frac{p_y-d_6a_y}{sin\theta_1} " /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;k_2=d_1-(p_z-d_6a_z)" title="\displaystyle k_2=d_1-(p_z-d_6a_z)" /></p>
+<p>观察发现，式(7)中只有<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />和未<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />知量，由此可建立<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于的<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />关系表达式，即<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />的解析解：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\theta_2=arcsin&space;\frac{k_1^2&plus;k_2^2&plus;a_2^2-(a_3^2&plus;d_4^2)}{&space;2a_2\sqrt{k_1^2&plus;k_2^2}&space;}-\phi" title="\displaystyle \theta_2=arcsin \frac{k_1^2+k_2^2+a_2^2-(a_3^2+d_4^2)}{ 2a_2\sqrt{k_1^2+k_2^2} }-\phi" /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;sin\phi&space;=\frac&space;{k_2}&space;{\sqrt{k_1^2&plus;k_2^2}&space;},&space;cos\phi&space;=\frac&space;{k_1}&space;{\sqrt{k_1^2&plus;k_2^2}&space;}" title="\displaystyle sin\phi =\frac {k_2} {\sqrt{k_1^2+k_2^2} }, cos\phi =\frac {k_1} {\sqrt{k_1^2+k_2^2} }" /></p>
+<p>对于<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />的计算，亦会产生两个解。</p>
+<p>以上求出了<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />和<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />，将式(5)(6)中<img src="https://latex.codecogs.com/svg.image?X" title="X" />和<img src="https://latex.codecogs.com/svg.image?Y" title="Y" />作为未知数，求出：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;X=sin(\theta_2&plus;\theta_3)=\frac&space;{a_3A&plus;d_4B}{a_3^2&plus;d_4^2}" title="\displaystyle X=sin(\theta_2+\theta_3)=\frac {a_3A+d_4B}{a_3^2+d_4^2}" /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;Y=cos(\theta_2&plus;\theta_3)=\frac&space;{a_3B-d_4A}{a_3^2&plus;d_4^2}" title="\displaystyle Y=cos(\theta_2+\theta_3)=\frac {a_3B-d_4A}{a_3^2+d_4^2}" /></p>
+<p>其中：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;A&space;=&space;k_1-a_2sin\theta_2,&space;B=k_2-a_2cos\theta_2&space;" title="\displaystyle A = k_1-a_2sin\theta_2, B=k_2-a_2cos\theta_2 " /></p>
+<p>结合式(12)(13)(14)和已算出的<span class="math inline">\(\theta_1 \theta_2\)</span>可以计算出关节角<span class="math inline">\(\theta_3\)</span>。</p>
 <h3 id="推算theta_5theta_4和theta_6">推算<span class="math inline">\(\theta_{5}\)</span>、<span class="math inline">\(\theta_4\)</span>和<span class="math inline">\(\theta_6\)</span>:</h3>
-<p>经过几次推算尝试，观察矩阵元素的特征（<img src="https://latex.codecogs.com/svg.image?T_{right}" title="T_{right}" />矩阵中元素表达式只含<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />且简单，<img src="https://latex.codecogs.com/svg.image?T_{left}" title="T_{left}" />矩阵中只含<img src="https://latex.codecogs.com/svg.image?\theta_1\theta_2\theta_3" title="\theta_1\theta_2\theta_3" />且已求得），因此确定关系式：<img src="https://latex.codecogs.com/svg.image?(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" title="(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" />为推导<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />的等式关系，根据矩阵中元素等式关系：</p>
-<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;T_{left}(2,3)=T_{right}(2,3)" title="\displaystyle T_{left}(2,3)=T_{right}(2,3)" /></p>
+<p>经过几次推算尝试，观察矩阵元素的特征（<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{right}" title="T_{right}" />矩阵中元素表达式只含<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />且简单，<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}" title="T_{left}" />矩阵中只含<img src="https://latex.codecogs.com/svg.image?\theta_1\theta_2\theta_3" title="\theta_1\theta_2\theta_3" />且已求得），因此确定关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2)^{-1}\mathbf{T}_{end}=\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" />为推导<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />的等式关系，根据矩阵中元素等式关系：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(2,3)=\mathbf{T}_{right}(2,3)" title="\displaystyle \mathbf{T}_{left}(2,3)=\mathbf{T}_{right}(2,3)" /></p>
 <p>可以直接求得<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\theta_5=arccos(a_xcos(\theta_2&plus;\theta_3)cos\theta_1&plus;a_ycos(\theta_2&plus;\theta_3)sin\theta_1-a_zsin(\theta_2&plus;\theta_3))" title="\displaystyle \theta_5=arccos(a_xcos(\theta_2+\theta_3)cos\theta_1+a_ycos(\theta_2+\theta_3)sin\theta_1-a_zsin(\theta_2+\theta_3))" /></p>
 <p>用该解析解计算<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />，会得到两个解。</p>
 <p>为求得<img src="https://latex.codecogs.com/svg.image?\theta_4" title="\theta_4" />，可建立如下关系式：</p>
-<p><img src="https://latex.codecogs.com/svg.image?T_{left}(1,3)=T_{right}(1,3)" title="T_{left}(1,3)=T_{right}(1,3)" /></p>
-<p><img src="https://latex.codecogs.com/svg.image?T_{left}(3,3)=T_{right}(3,3)&space;" title="T_{left}(3,3)=T_{right}(3,3) " /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}(1,3)=\mathbf{T}_{right}(1,3)" title="\mathbf{T}_{left}(1,3)=\mathbf{T}_{right}(1,3)" /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}(3,3)=\mathbf{T}_{right}(3,3)&space;" title="\mathbf{T}_{left}(3,3)=\mathbf{T}_{right}(3,3) " /></p>
 <p>化简得：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;sin\theta_4=\frac{o_ycos\theta_1-o_xsin\theta_1}{sin\theta_5}" title="\displaystyle sin\theta_4=\frac{o_ycos\theta_1-o_xsin\theta_1}{sin\theta_5}" /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;cos\theta_4=\frac{-o_zcos(\theta_2&plus;\theta_3)-o_xsin(\theta_2&plus;\theta_3)cos\theta_1-o_ysin(\theta_2&plus;\theta_3)sin\theta_1}{sin\theta_5}" title="\displaystyle cos\theta_4=\frac{-o_zcos(\theta_2+\theta_3)-o_xsin(\theta_2+\theta_3)cos\theta_1-o_ysin(\theta_2+\theta_3)sin\theta_1}{sin\theta_5}" /></p>
 <p>如此可以确定解<img src="https://latex.codecogs.com/svg.image?\theta_4" title="\theta_4" />。</p>
 <p>利用矩阵元素对应相等关系：</p>
-<p><img src="https://latex.codecogs.com/svg.image?T_{left}(2,2)=T_{right}(2,2)" title="T_{left}(2,2)=T_{right}(2,2)" /></p>
-<p><img src="https://latex.codecogs.com/svg.image?T_{left}(2,1)=T_{right}(2,1)" title="T_{left}(2,1)=T_{right}(2,1)" /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}(2,2)=\mathbf{T}_{right}(2,2)" title="\mathbf{T}_{left}(2,2)=\mathbf{T}_{right}(2,2)" /></p>
+<p><img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}(2,1)=\mathbf{T}_{right}(2,1)" title="\mathbf{T}_{left}(2,1)=\mathbf{T}_{right}(2,1)" /></p>
 <p>化简为：</p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;sin\theta_6=\frac{o_xcos(\theta_2&plus;\theta_3)cos\theta_1&plus;o_ycos(\theta_2&plus;\theta_3)sin\theta_1-o_zsin(\theta_2&plus;\theta_3)}{sin\theta_5}" title="\displaystyle sin\theta_6=\frac{o_xcos(\theta_2+\theta_3)cos\theta_1+o_ycos(\theta_2+\theta_3)sin\theta_1-o_zsin(\theta_2+\theta_3)}{sin\theta_5}" /></p>
 <p><img src="https://latex.codecogs.com/svg.image?\displaystyle&space;cos\theta_6=\frac{n_zsin(\theta_2&plus;\theta_3)-n_xcos(\theta_2&plus;\theta_3)cos\theta_1-n_ycos(\theta_2&plus;\theta_3)sin\theta_1}{sin\theta_5}&space;" title="\displaystyle cos\theta_6=\frac{n_zsin(\theta_2+\theta_3)-n_xcos(\theta_2+\theta_3)cos\theta_1-n_ycos(\theta_2+\theta_3)sin\theta_1}{sin\theta_5} " /></p>
