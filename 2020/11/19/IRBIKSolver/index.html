@@ -203,7 +203,7 @@ Fig.1 ABB IRB2600 coordinate system
 </center>
 <h2 id="irb2600的逆运动学解析解推算">IRB2600的逆运动学解析解推算</h2>
 <h3 id="推算theta_1">推算theta_1:</h3>
-<p>利用关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0)^{-1}\mathbf{T}_{end}=\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0)^{-1}T_{end}=T^2_1T^3_2T^4_3T^5_4T^6_5" />对<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />进行推算，通过对比矩阵元素之间关系，可按照如下过程求解<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" /></p>
+<p>利用关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0)^{-1}\cdot\mathbf{T}_{end}=\mathbf{T}^2_1\cdot\mathbf{T}^3_2\cdot\mathbf{T}^4_3\cdot\mathbf{T}^5_4\cdot\mathbf{T}^6_5" title="(T^1_0)^{-1}T_{end}=T^2_1T^3_2T^4_3T^5_4T^6_5" />对<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />进行推算，通过对比矩阵元素之间关系，可按照如下过程求解<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" /></p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?\displaystyle\frac{\mathbf{T}_{left}(2,4)}{\mathbf{T}_{left}(2,3)}=\frac{\mathbf{T}_{right}(2,4)}{\mathbf{T}_{right}(2,3)}" title="\displaystyle\frac{T_{left}(2,4)}{T_{left}(2,3)}=\frac{T_{right}(2,4)}{T_{right}(2,3)}" />
 </center>
@@ -213,7 +213,7 @@ Fig.1 ABB IRB2600 coordinate system
 </center>
 <p>对于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的计算，将会产生两个解。</p>
 <h3 id="推算theta_2和theta_3">推算theta_2和theta_3:</h3>
-<p><img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />和<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />可以由一个等式关系确定：<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" title="\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" />，首先为确定<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的关系式，通过矩阵中如下元素的等式关系：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />和<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />可以由一个等式关系确定：<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{end}\cdot(\mathbf{T}^5_4\cdot\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\cdot\mathbf{T}^2_1\cdot\mathbf{T}^3_2\cdot\mathbf{T}^4_3" title="\mathbf{T}_{end}(\mathbf{T}^5_4\mathbf{T}^6_5)^{-1}=\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2\mathbf{T}^4_3" />，首先为确定<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />的关系式，通过矩阵中如下元素的等式关系：</p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(2,4)=\mathbf{T}_{right}(2,4)&space;" title="\displaystyle T_{left}(2,4)=T_{right}(2,4) " />
 </center>
@@ -238,7 +238,7 @@ Fig.1 ABB IRB2600 coordinate system
 <center>
 <img src="https://latex.codecogs.com/svg.image?\displaystyle&space;k_2=d_1-(p_z-d_6a_z)" title="\displaystyle k_2=d_1-(p_z-d_6a_z)" />
 </center>
-<p>观察发现，式中只有<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />和未<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />知量，由此可建立<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于的<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />关系表达式，即<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />的解析解：</p>
+<p>观察发现，式中只有<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />和<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />是未知量，由此可建立<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />关于的<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />关系表达式，即<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />的解析解：</p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\theta_2=arcsin&space;\frac{k_1^2&plus;k_2^2&plus;a_2^2-(a_3^2&plus;d_4^2)}{&space;2a_2\sqrt{k_1^2&plus;k_2^2}&space;}-\phi" title="\displaystyle \theta_2=arcsin \frac{k_1^2+k_2^2+a_2^2-(a_3^2+d_4^2)}{ 2a_2\sqrt{k_1^2+k_2^2} }-\phi" />
 </center>
@@ -257,9 +257,9 @@ Fig.1 ABB IRB2600 coordinate system
 <center>
 <img src="https://latex.codecogs.com/svg.image?\displaystyle&space;A&space;=&space;k_1-a_2sin\theta_2,&space;B=k_2-a_2cos\theta_2&space;" title="\displaystyle A = k_1-a_2sin\theta_2, B=k_2-a_2cos\theta_2 " />
 </center>
-<p>结合已算出的<span class="math inline">\(\theta_1 \theta_2\)</span>可以计算出关节角<span class="math inline">\(\theta_3\)</span>。</p>
+<p>结合已算出的<img src="https://latex.codecogs.com/svg.image?\theta_1" title="\theta_1" />和<img src="https://latex.codecogs.com/svg.image?\theta_2" title="\theta_2" />，可以计算出关节角<img src="https://latex.codecogs.com/svg.image?\theta_3" title="\theta_3" />。</p>
 <h3 id="推算theta_5theta_4和theta_6">推算theta_5、theta_4和theta_6:</h3>
-<p>经过几次推算尝试，观察矩阵元素的特征（<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{right}" title="T_{right}" />矩阵中元素表达式只含<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />且简单，<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}" title="T_{left}" />矩阵中只含<img src="https://latex.codecogs.com/svg.image?\theta_1\theta_2\theta_3" title="\theta_1\theta_2\theta_3" />且已求得），因此确定关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0\mathbf{T}^2_1\mathbf{T}^3_2)^{-1}\mathbf{T}_{end}=\mathbf{T}^4_3\mathbf{T}^5_4\mathbf{T}^6_5" title="(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" />为推导<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />的等式关系，根据矩阵中元素等式关系：</p>
+<p>经过几次推算尝试，观察矩阵元素的特征（<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{right}" title="T_{right}" />矩阵中元素表达式只含<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />且简单，<img src="https://latex.codecogs.com/svg.image?\mathbf{T}_{left}" title="T_{left}" />矩阵中只含<img src="https://latex.codecogs.com/svg.image?\theta_1\theta_2\theta_3" title="\theta_1\theta_2\theta_3" />且已求得），因此确定关系式：<img src="https://latex.codecogs.com/svg.image?(\mathbf{T}^1_0\cdot\mathbf{T}^2_1\cdot\mathbf{T}^3_2)^{-1}\cdot\mathbf{T}_{end}=\mathbf{T}^4_3\cdot\mathbf{T}^5_4\cdot\mathbf{T}^6_5" title="(T^1_0T^2_1T^3_2)^{-1}T_{end}=T^4_3T^5_4T^6_5" />为推导<img src="https://latex.codecogs.com/svg.image?\theta_4\theta_5\theta_6" title="\theta_4\theta_5\theta_6" />的等式关系，根据矩阵中元素等式关系：</p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?\displaystyle&space;\mathbf{T}_{left}(2,3)=\mathbf{T}_{right}(2,3)" title="\displaystyle \mathbf{T}_{left}(2,3)=\mathbf{T}_{right}(2,3)" />
 </center>
@@ -299,7 +299,7 @@ Fig.1 ABB IRB2600 coordinate system
 </center>
 <p>由式可求得<img src="https://latex.codecogs.com/svg.image?\theta_6" title="\theta_6" />，其解与<img src="https://latex.codecogs.com/svg.image?\theta_5" title="\theta_5" />唯一对应。</p>
 <h2 id="矢量积法求解雅可比">矢量积法求解雅可比</h2>
-<p>雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />可以看成是关节空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{q}" title="\dot{q}" />向笛卡尔空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{x}" title="\dot{x}" />的线性映射。雅可比矩阵 <span class="math inline">\(J(q)\)</span> 依赖于机器人的构形，是一个依赖于 <span class="math inline">\(q\)</span> 的线性变换矩阵，雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />不一定是方阵，它可能是长矩阵，也可能是高矩阵，<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />的行数等于机器人在笛卡尔空间中的自由度数，比如平面操作臂的雅可比矩阵有3行，6关节的空间操作臂的雅可比矩阵是6行，对于关节的机器人，<img src="https://latex.codecogs.com/svg.image?n" title="n" />其雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J\in&space;\Re&space;^{6&space;\times&space;n}" title="J\in \Re ^{6 \times n}" />是<img src="https://latex.codecogs.com/svg.image?6&space;\times&space;n" title="6 \times n" />的矩阵，其中前3行表示对末端执行器线速度<img src="https://latex.codecogs.com/svg.image?v" title="v" />的传递比，后3行表示对末端执行器角速度<img src="https://latex.codecogs.com/svg.image?w" title="w" />的传递比。</p>
+<p>雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />可以看成是关节空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{q}" title="\dot{q}" />向笛卡尔空间的速度矢量<img src="https://latex.codecogs.com/svg.image?\dot{x}" title="\dot{x}" />的线性映射。雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />依赖于机器人的构形，是一个依赖于<img src="https://latex.codecogs.com/svg.image?q" title="q" />的线性变换矩阵，雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />不一定是方阵，它可能是长矩阵，也可能是高矩阵，<img src="https://latex.codecogs.com/svg.image?J(q)" title="J(q)" />的行数等于机器人在笛卡尔空间中的自由度数，比如平面操作臂的雅可比矩阵有3行，6关节的空间操作臂的雅可比矩阵是6行，对于关节的机器人，<img src="https://latex.codecogs.com/svg.image?n" title="n" />其雅可比矩阵<img src="https://latex.codecogs.com/svg.image?J\in&space;\Re&space;^{6&space;\times&space;n}" title="J\in \Re ^{6 \times n}" />是<img src="https://latex.codecogs.com/svg.image?6&space;\times&space;n" title="6 \times n" />的矩阵，其中前3行表示对末端执行器线速度<img src="https://latex.codecogs.com/svg.image?v" title="v" />的传递比，后3行表示对末端执行器角速度<img src="https://latex.codecogs.com/svg.image?w" title="w" />的传递比。</p>
 <p>另一方面，每一列代表相应的关节速度<img src="https://latex.codecogs.com/svg.image?\dot{q_{i}}" title="\dot{q_{i}}" />对末端执行器线速度和角速度的传递比。</p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?\dot{x}=J(q)\dot{q}" title="\dot{x}=J(q)\dot{q}" />
@@ -329,12 +329,12 @@ Fig.1 ABB IRB2600 coordinate system
 <center>
 <img src="https://latex.codecogs.com/svg.image?v=(z_{i}&space;\times&space;{^{i}p^{0}_{n}})&space;\dot{q}_{i}" title="v=(z_{i} \times {^{i}p^{0}_{n}}) \dot{q}_{i}" />
 </center>
-<p>因此，雅可比矩阵的第 <span class="math inline">\(i\)</span> 列为：</p>
+<p>因此，雅可比矩阵的第<img src="https://latex.codecogs.com/svg.image?i" title="i" />列为：</p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?J_{i}=\begin{bmatrix}z_{i}&space;\times&space;{^{i}p^{0}_{n}}\\&space;z_{i}\end{bmatrix}=\begin{bmatrix}z_{i}&space;\times&space;({^{0}_{i}R&space;{^{i}p_{n}}})\\&space;z_{i}\end{bmatrix}" title="J_{i}=\begin{bmatrix}z_{i} \times {^{i}p^{0}_{n}}\\ z_{i}\end{bmatrix}=\begin{bmatrix}z_{i} \times ({^{0}_{i}R {^{i}p_{n}}})\\ z_{i}\end{bmatrix}" />
 </center>
 <p>其中，<img src="https://latex.codecogs.com/svg.image?z_{i}" title="z_{i}" />是坐标系{<img src="https://latex.codecogs.com/svg.image?i" title="i" />} 的<img src="https://latex.codecogs.com/svg.image?z" title="z" />轴单位矢量（在基座坐标系{<img src="https://latex.codecogs.com/svg.image?0" title="0" />}中表示）。</p>
-<p>公式(7)中，<img src="https://latex.codecogs.com/svg.image?^{i}p^{0}_{n}" title="^{i}p^{0}_{n}" />表示末端执行器坐标原点想对于坐标系{<img src="https://latex.codecogs.com/svg.image?i" title="i" />}的位置矢量在基坐标系{<img src="https://latex.codecogs.com/svg.image?0" title="0" />}中的表示，即：</p>
+<p>公式中，<img src="https://latex.codecogs.com/svg.image?^{i}p^{0}_{n}" title="^{i}p^{0}_{n}" />表示末端执行器坐标原点想对于坐标系{<img src="https://latex.codecogs.com/svg.image?i" title="i" />}的位置矢量在基坐标系{<img src="https://latex.codecogs.com/svg.image?0" title="0" />}中的表示，即：</p>
 <center>
 <img src="https://latex.codecogs.com/svg.image?^{i}p^{0}_{n}={^{0}_{i}\mathbf{R}{^{i}p_{n}}}" title="^{i}p^{0}_{n}={^{0}_{i}R{^{i}p_{n}}}" />
 </center>
